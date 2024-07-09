@@ -38,6 +38,21 @@ void bubbleSort(int arr[], int n)
             break;
     }
 }
+
+void insertionSort(int arr[], int n)
+{
+    for(int i =0; i<n; i++)
+    {
+        int j =i;
+        while(j>0 && arr[j] < arr[j-1])
+        {
+            int temp = arr[j];
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+            j--; 
+        }
+    }
+}
 int main()
 {
     int n;
@@ -47,7 +62,8 @@ int main()
         cin >> a[i];
 
     // selectionSort(a, n);
-    bubbleSort(a, n);
+    //bubbleSort(a, n);
+    insertionSort(a,n);
 
     for (int i = 0; i < n; i++)
         cout << a[i] << " ";
