@@ -46,17 +46,9 @@ void rotate_optimal(vector<int>& nums, int k) {
         int end = k;
 
         reverseArr(nums,0,n-k-1);
-
-        for(int i =0; i<n;i++)
-        cout << nums[i] << " ";
-
-        cout <<"\n";
+        
         reverseArr(nums,n-k,n-1);
 
-        for(int i =0; i<n;i++)
-        cout << nums[i] << " ";
-
-        cout <<"\n";
         reverseArr(nums,0,n-1);
         
     }
