@@ -8,7 +8,7 @@ int binarySearchRecursive(vector<int>& nums, int target, int l,int h)
         int m = (l+h)/2;
         if(nums[m] == target) return m;
         else if(nums[m] > target) return binarySearchRecursive(nums,target, l,m-1);
-        else return binarySearchRecursive(nums,target, l+1,h);
+        else return binarySearchRecursive(nums,target, m+1,h);
     }
     int search(vector<int>& nums, int target) {
         int n = nums.size();
