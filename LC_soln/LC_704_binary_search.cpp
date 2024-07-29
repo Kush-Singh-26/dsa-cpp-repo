@@ -1,7 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int search(vector<int>& nums, int target) {
+//recursive
+int binarySearchRecursive(vector<int>& nums, int target, int l,int h)
+    {
+        if(l>h) return -1;
+        int m = (l+h)/2;
+        if(nums[m] == target) return m;
+        else if(nums[m] > target) return binarySearchRecursive(nums,target, l,m-1);
+        else return binarySearchRecursive(nums,target, l+1,h);
+    }
+    int search(vector<int>& nums, int target) {
+        int n = nums.size();
+        return binarySearchRecursive(nums,target, 0,n-1);
+    }
+// iterative
+int searchRecursive(vector<int>& nums, int target) {
         int n = nums.size();
         int l =0,h =n-1;
         while(l<=h)
